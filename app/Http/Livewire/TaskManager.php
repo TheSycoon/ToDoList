@@ -17,7 +17,7 @@ class TaskManager extends Component
 
     public function loadTasks()
     {
-        $this->tasks = Task::get(); // get all tasks including soft deleted
+        $this->tasks = Task::get();
     }
 
     public function addTask()

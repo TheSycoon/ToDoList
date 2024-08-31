@@ -24,6 +24,8 @@ class TaskManager extends Component
     {
         $this->validate([
             'taskName' => 'required|string|max:255|unique:tasks,task_name',
+        ],[
+            'taskName.unique'=>'Task already exists'
         ]);
 
         Task::create([

@@ -3,10 +3,20 @@
         <h3>PHP - Simple To Do List App</h3>
     </div>
     <div class="card-body">
-        <form wire:submit.prevent="addTask" class="d-flex mb-3">
-            <input type="text" wire:model="taskName" class="form-control me-2" placeholder="Add a task...">
-            <button type="submit" class="btn btn-primary">Add Task</button>
-        </form>
+       <div class="row">
+        <div class="col-12">
+            <form wire:submit.prevent="addTask" class="d-flex mb-3">
+                <input type="text" wire:model="taskName" class="form-control me-2" placeholder="Add a task...">
+                <button type="submit" class="btn btn-primary">Add Task</button>
+            </form>
+
+        </div>
+        <div class="col-12">
+            @error('taskName')
+                <span class="text-danger mb-2">{{$message}}</span>
+            @enderror
+        </div>
+       </div>
 
         <table class="table table-bordered">
             <thead>

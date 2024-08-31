@@ -23,7 +23,7 @@ class TaskManager extends Component
     public function addTask()
     {
         $this->validate([
-            'taskName' => 'required|string|max:255',
+            'taskName' => 'required|string|max:255|unique:tasks,task_name',
         ]);
 
         Task::create([
